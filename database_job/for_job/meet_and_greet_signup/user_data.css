@@ -1,0 +1,17 @@
+.header{
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: rgb(73, 71, 71) 2px 2px 7px;
+}
+
+.whole_set{
+    background-color: silver;
+    width : 20%;
+    margin : auto
+}
+
+.inner {
+    /* width:70%;
+    margin:auto; */
+    /* text-align:center; */
+}
