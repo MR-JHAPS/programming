@@ -14,49 +14,51 @@
 </head>
 <body>
     <h1 class="header"> SIGN UP </h1>
-    <form action="user_data.php" method ="post">
+    
 
-        <div class = "whole_set">
-            <fieldset>
+            <fieldset class = "whole_set">
                 <legend align = "center"> USER DETAILS </legend><br>
 
-            <div class = "inner">
+                <form action="user_data.php" method ="post">
 
-                <label for= "first_name" >First Name </label><br>
-                <input type = "text" id= "first_name" name ="first_name"> <br><br>
+            
 
-                <label for= "last_name" >Last Name </label><br>
-                <input type = "text" id= "last_name" name ="last_name"> <br><br>
+                    <label for= "first_name" >First Name </label><br>
+                    <input type = "text" id= "first_name" name ="first_name"> <br><br>
 
-                <label for= "email"> E-mail </label><br>
-                <input type = "email" id= "email" name ="email"> <br><br>
+                    <label for= "last_name" >Last Name </label><br>
+                    <input type = "text" id= "last_name" name ="last_name"> <br><br>
 
-                <label for= "telephone" >Telephone </label><br>
-                <input type= "text" id= "telephone" name ="telephone"> <br><br>
+                    <label for= "email"> E-mail </label><br>
+                    <input type = "email" id= "email" name ="email"> <br><br>
 
+                    <label for= "telephone" >Telephone </label><br>
+                    <input type= "text" id= "telephone" name ="telephone"> <br><br>
+
+                    
+                        <legend>Gender</legend><br>
+
+                        <input type="radio" id="male" name ="gender">
+                        <label for="male"> Male </label><br>
+
+                        <input type="radio" id="female" name ="gender">
+                        <label for="female"> Female </label><br>
+
+                        <input type="radio" id="other" name ="gender">
+                        <label for="other"> Other </label><br>
+                    
+                    <br>
+
+                    <input type="submit" value="submit"> 
+
+            
+                </form>
                 
-                    <legend>Gender</legend><br>
-
-                    <input type="radio" id="male" name ="gender">
-                    <label for="male"> Male </label><br>
-
-                    <input type="radio" id="female" name ="gender">
-                    <label for="female"> Female </label><br>
-
-                    <input type="radio" id="other" name ="gender">
-                    <label for="other"> Other </label><br>
-                
-                <br>
-
-                <input type="submit" value="submit"> 
-
-            </div>
-
             </fieldset>
 
-        </div>
+        
 
-    </form>
+    
     
 </body>
 </html>
