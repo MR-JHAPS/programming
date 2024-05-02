@@ -1,5 +1,5 @@
 <?php
-    
+   
     
 ?>
 
@@ -23,33 +23,33 @@
 
             
 
-                    <label for= "first_name" >First Name </label><br>
+                    <label for= "first_name" >First Name* </label><br>
                     <input type = "text" id= "first_name" name ="first_name"> <br><br>
 
-                    <label for= "last_name" >Last Name </label><br>
+                    <label for= "last_name" >Last Name* </label><br>
                     <input type = "text" id= "last_name" name ="last_name"> <br><br>
 
-                    <label for= "email"> E-mail </label><br>
+                    <label for= "email"> E-mail* </label><br>
                     <input type = "email" id= "email" name ="email"> <br><br>
 
-                    <label for= "telephone" >Telephone </label><br>
+                    <label for= "telephone" >Telephone* </label><br>
                     <input type= "text" id= "telephone" name ="telephone"> <br><br>
 
                     
-                        <legend>Gender</legend><br>
+                        Gender<br>
 
-                        <input type="radio" id="male" name ="gender">
+                        <input type="radio" value="male" name ="gender">
                         <label for="male"> Male </label><br>
 
-                        <input type="radio" id="female" name ="gender">
+                        <input type="radio" value="female" name ="gender">
                         <label for="female"> Female </label><br>
 
-                        <input type="radio" id="other" name ="gender">
+                        <input type="radio" value="other" name ="gender">
                         <label for="other"> Other </label><br>
                     
                     <br>
 
-                    <input type="submit" value="submit"> 
+                    <input type="submit" value="submit" name="submit"> 
 
             
                 </form>
@@ -64,43 +64,75 @@
 </html>
 
 <?php
-            //PHP only registers the post[name] it doesn't register the id of what I have tried ,,,, Further to inquire.  
+    
+
+    //PHP only registers the post[name] it doesn't register the id of what I have tried ,,,, Further to inquire.  
+    
+    
 
 
-                //Fetching the user_input from HTML form to PHP. And assigning them to a variables in PHP.
+        if(isset($_POST["submit"])){
+            if(!empty($_POST["first_name"]) || ($_POST["last_name"]) || $_POST["email"] || $_POST["telephone"] ){
+                $first_name = $_POST["first_name"];
+                $last_name = $_POST["last_name"];
+                $email = $_POST["email"];
+                $telephone = $_POST["telephone"];
+            }
+            else{
+               
+                echo "<p align= 'center'>"."Fields marked with * cannot be empty."."</p>"."<br>";
+            }
+            
 
+            
+                
+            if(isset($_POST["gender"]) ){
+                $gender = $_POST["gender"];
+            }
+            else{
+                $gender ="";
+            }
+     
+        }
+           
+        else{
+            die;
+        }
+    
+        include_once "insert_connection.php"; 
 
-   /*  $first_name = $_POST["first_name"];
-    //echo $first_name;
-    $last_name = $_POST["last_name"];
-    $email =$_POST["email"];
-    $telephone =$_POST["telephone"]; */
-
-
-
-
-   /*  try{
+    /*  try{
         $sql_db_source = new PDO ($config["source"], $config["username"], $config["password"]);
         $sql_db_source->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         //$insert = "INSERT INTO users (first_name, last_name, email, telephone) VALUES ('john' , 'snow' , 'a@gmail.com' ,'743256')";
 
-        $insert = "INSERT INTO users (first_name, last_name, email, telephone) VALUES (?,?,?,?)"; // what is "?"   ??
+        $insert = "INSERT INTO users (first_name, last_name, email, telephone, gender) VALUES (?,?,?,?,?)"; // what is "?"   ??
         $prepare_insert = $sql_db_source->prepare($insert);
         
-        
-        $prepare_insert->execute([$first_name , $last_name , $email, $telephone]); 
-        echo"done";
+
+        //********** This is to prevent registering the empty db with no value.****************
+        //**********Only executes if the fields have values.***********************************
+
+        if(!empty($_POST["first_name"] && $_POST["last_name"] && $_POST["email"] &&  $_POST["telephone"] )){
+
+
+        $prepare_insert->execute([ $first_name, $last_name , $email, $telephone, $gender]); 
+
+        echo "<p align= 'center'>"." You are successfully signed up for MEET AND GREET"."</p>";
+        }
+
+
+        else{
+            echo "<p class='failed_to_register' align= 'center'>"." Unable to register"."</p>";
+        }
         
     }
     catch (PDOException $e){
         echo "neraz". $e->getMessage();
-    }
- */
+    } */
 
-
-    
- include_once "insert_connection.php";
+            
 
 ?>
 

@@ -1,3 +1,15 @@
+<?php
+
+    $config = [
+        "source" => "mysql:host=localhost;dbname=meet_and_greet",
+        "username"=> "root",
+        "password"=> "550463",
+
+    ]
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,7 +89,13 @@
     
     
 
+        $conn = new PDO ($config["source"], $config["username"], $config["password"]);
 
+        $sql_query_update = "UPDATE users set last_name = $last_name Where id=$id "; 
+
+        $prepare = $conn->prepare($sql_query_update);
+
+        $prepare->execute();
 
 
     ?>
