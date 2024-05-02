@@ -1,0 +1,32 @@
+#form_layer {
+    
+    width:35%;
+    height:400px;
+    margin:auto;
+    background-color: silver;
+    
+}
+
+#submit {
+    color:white;
+    background-color: darkolivegreen;
+    width:2cm ;
+    height:1cm;
+    margin-left:30%;
+}
+
+.user{
+    color: green;
+    margin-left : 30%;
+    margin-top: 8px;
+    width:40%;
+    height : 30px;
+    text-align: center;
+}
+
+#result {
+    text-align :center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
+    text-shadow: rgb(141, 141, 195) 3px 2px 20px;
+}

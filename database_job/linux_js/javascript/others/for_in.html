@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="a"></p>
+    
+    <script>
+        let name= "neraz";
+        let splitted_name= name.split("");
+        document.getElementById("a").innerHTML = name;
+
+        for(let i of splitted_name){
+            
+
+            
+            
+          document.getElementById("a").innerHTML = i;
+          i+=i;
+          
+
+           /*  }
+            else{
+                document.getElementById("a").innerHTML = "The word doesn't have the letter";
+            } */
+        }
+    </script>
+</body>
+</html>
