@@ -15,25 +15,33 @@
 <body>
     <h1 class="header"> SIGN UP </h1>
     
-
-            <fieldset class = "whole_set">
-                <legend align = "center"> USER DETAILS </legend><br>
+            <div class= "whole_set">
+            <!-- <fieldset class = "whole_set">
+                <legend align = "center"> USER DETAILS </legend><br> -->
 
                 <form action="user_data.php" method ="post">
 
             
 
                     <label for= "first_name" >First Name* </label><br>
-                    <input type = "text" id= "first_name" name ="first_name"> <br><br>
+                    <input type = "text" id= "first_name" name ="first_name" placeholder="first name"> <br><br>
 
                     <label for= "last_name" >Last Name* </label><br>
-                    <input type = "text" id= "last_name" name ="last_name"> <br><br>
+                    <input type = "text" id= "last_name" name ="last_name" placeholder="last name"> <br><br>
 
                     <label for= "email"> E-mail* </label><br>
-                    <input type = "email" id= "email" name ="email"> <br><br>
+                    <input type = "email" id= "email" name ="email" placeholder="email"> <br><br>
 
                     <label for= "telephone" >Telephone* </label><br>
-                    <input type= "text" id= "telephone" name ="telephone"> <br><br>
+                    <input type= "text" id= "telephone" name ="telephone" placeholder="telephone"> <br><br>
+
+                    
+                    <label for= "passwords"> Password* </label><br>
+                    <input type = "password" id= "passwords" name ="passwords" placeholder="password"> <br><br>
+
+                    <label for= "repeat_passwords"> Repeat Password* </label><br>
+                    <input type = "password" id= "repeat_passwords" name ="repeat_passwords" placeholder="repeat password" > <br><br>
+
 
                     
                         Gender<br>
@@ -54,7 +62,8 @@
             
                 </form>
                 
-            </fieldset>
+            <!-- </fieldset> -->
+            </div>
 
         
 
@@ -72,12 +81,22 @@
 
 
         if(isset($_POST["submit"])){
-            if(!empty($_POST["first_name"]) || ($_POST["last_name"]) || $_POST["email"] || $_POST["telephone"] ){
+            if(!empty($_POST["first_name"]) && ($_POST["last_name"]) && $_POST["email"] && $_POST["telephone"] && ($_POST["passwords"]) && ($_POST["repeat_passwords"]) ){
                 $first_name = $_POST["first_name"];
                 $last_name = $_POST["last_name"];
                 $email = $_POST["email"];
                 $telephone = $_POST["telephone"];
+                $passwords = $_POST["passwords"];
+                $repeat_passwords = $_POST["repeat_passwords"];
+
+                if($passwords!==$repeat_passwords){               //to check if the password and the repeat password match but actual filter is in the insert_connection.php before executing the db.
+                    echo "<p align= 'center'>"."Your Passwords Doesn't Match"."</p>";
+                }
+                   
             }
+
+            
+
             else{
                
                 echo "<p align= 'center'>"."Fields marked with * cannot be empty."."</p>"."<br>";

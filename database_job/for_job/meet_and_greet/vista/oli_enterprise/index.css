@@ -1,0 +1,78 @@
+body { 
+    background-image: url("images/blue_background.jpg");
+    margin: 0px;
+    
+
+}
+
+.navigation { /* Unordered list class name */
+    
+    border:2px solid hsl(0, 0%, 25%);
+    margin:0px;
+   /*  margin:auto; */
+    width: auto;
+    overflow: hidden;  /* This prevents the border from collapsing on itself */
+    background-color: hsla(0, 0%, 6%, 0.472);
+    list-style: none; /* to remove bulleting */
+    }
+
+.navigation a {  /* This is the hyperlink */
+    text-decoration: none; 
+    color:hsla(0, 0%, 91%, 0.939);
+    /* margin-left:20px; */
+    
+    float: left;
+    padding: 5px 20px 5px 20px;
+}
+
+.nav_right a{    /* This is the hyperlink on the right side of the navigation bar. */
+    float:right;
+}
+
+.navigation li :hover{  /* To create the hovering effects on the navigation bar */
+    background-color: rgb(0, 0, 0);
+}
+
+
+.header {
+    text-align: center;
+    padding:8px 10px 8px 10px;
+    background-color: rgba(254, 254, 254, 0.46);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: rgba(0, 0, 0, 0.388) 6px 6px 7px;
+    font-size: 20px;
+    color:rgba(0, 0, 0, 0.7);
+
+}
+.header img{
+    float: left;
+}
+
+
+
+#main_content h3{
+    
+    
+    
+    background-color: rgba(6, 6, 6, 0.144);
+    color:rgba(222, 220, 220, 0.986);
+    padding:5px 5px 5px 5px;
+    border-radius: 20px;
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+
+}
+
+.content{
+    color:rgb(255, 255, 255);
+    background-color: rgba(41, 40, 40, 0.461);
+    
+    
+    float:right;
+}
+
+.side_bar{
+    color:white;
+    float: 
+}

@@ -9,17 +9,17 @@
 
         //$insert = "INSERT INTO users (first_name, last_name, email, telephone) VALUES ('john' , 'snow' , 'a@gmail.com' ,'743256')";
 
-        $insert = "INSERT INTO users (first_name, last_name, email, telephone, gender) VALUES (?,?,?,?,?)"; // what is "?"   ??
+        $insert = "INSERT INTO users (first_name, last_name, email, telephone, gender, passwords) VALUES (?,?,?,?,?,?)"; // what is "?"   ??
         $prepare_insert = $sql_db_source->prepare($insert);
         
 
         //********** This is to prevent registering the empty db with no value.****************
         //**********Only executes if the fields have values.***********************************
 
-        if(!empty($_POST["first_name"] && $_POST["last_name"] && $_POST["email"] && /* $_POST["gender"] */  $_POST["telephone"] )){
+        if(!empty($_POST["first_name"] && $_POST["last_name"] && $_POST["email"] &&  $_POST["passwords"] && $_POST["telephone"] && $passwords=b==$repeat_passwords )){
 
 
-        $prepare_insert->execute([ $first_name, $last_name , $email, $telephone, $gender]); 
+        $prepare_insert->execute([ $first_name, $last_name , $email, $telephone, $gender, $passwords]); 
 
         echo "<p align= 'center'>"." You are successfully signed up for MEET AND GREET"."</p>";
         }
