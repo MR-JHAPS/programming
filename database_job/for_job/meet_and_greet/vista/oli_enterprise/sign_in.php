@@ -1,3 +1,9 @@
+<?php
+
+include_once "C:/xampp/htdocs/programming/database_job/for_job/meet_and_greet/table/table_user_data.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,8 +32,37 @@
     </div>
     <?php
     
+    if(isset($_POST["submit"])){
+        if(!empty($_POST["email"])){
+            $email = $_POST["email"];
+        }
+        else{
+            echo "<p align= 'center'>"."please enter an email "."</p>"."<br>";
+        }
+
+        if(!empty($_POST["password"])){
+            $password = $_POST["password"];
+        }
+        else{
+            echo "<p align= 'center'>"."please enter the password"."</p>";
+        }
+
+        
+      
+
+   //echo $data["email"];
+   foreach($datas as $data){
+    //echo $data["email"]."<br>";
+        if($data["email"]=$email){
+            echo"It exists";
+        }
     
-    
+        else{
+            echo"It doesn't exists";
+        }
+    }
+
+}
     ?>
     
 </body>
