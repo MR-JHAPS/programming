@@ -51,9 +51,9 @@ include_once "C:/xampp/htdocs/programming/database_job/for_job/meet_and_greet/ta
       
 
    //echo $data["email"];
-   foreach($datas as $data){
+   foreach($datas as $data){        //comparing the values from the database.
     //echo $data["email"]."<br>";
-        if($data["email"]=$email){
+        if($data["email"]=$email){      //To make sure the user email is the valid email by comparing to the db email list so that the user can make a sign
             echo"It exists";
         }
     
