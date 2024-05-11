@@ -12,8 +12,8 @@
 </head>
 <body>
     <form action=update.php method = "post">
-        <label for ="id">User_ID</label>  <!-- This Id is for the users to modity the data of -->
-        <input type = "text" name = "id" id="id" placeholder="id"><br><br>
+        <!-- <label for ="id">User_ID</label>   This Id is for the users to modity the data of 
+        <input type = "text" name = "id" id="id" placeholder="id"><br><br> -->
 
         <label for ="first_name">First_name</label>
         <input type = "text" name = "first_name" id="first_name" placeholder="firstname"><br><br>
@@ -34,12 +34,13 @@
 try{
     
     if(isset($_POST["update"])){
-        if(!empty($_POST["first_name"] && $_POST["last_name"] && $_POST["email"] && $_POST["id"] )){
+        //$id = $_POST["id"];
+        if(!empty($_POST["first_name"] && $_POST["last_name"] && $_POST["email"] /* && $_POST["id"] */ )){
         $first_name= $_POST["first_name"];
         
         $last_name = $_POST["last_name"];
         $email = $_POST["email"];
-        $id = $_POST["id"];
+        
         }
         else{
             echo "The input fields cannot be empty ";
@@ -59,11 +60,11 @@ catch(ErrorException $e){
    try{
     $conn = new pdo($config["source"], $config["username"], $config["password"]);
 
-    $sql_query = "UPDATE user SET first_name=?, last_name=?, email=? WHERE id=?";  // using ? as placeholder of the user datas.
+    $sql_query = "UPDATE user SET first_name=?, last_name=?, email=?  WHERE id=? ";  // using ? as placeholder of the user datas.
     
     $prepare = $conn->prepare($sql_query);
     
-    $prepare->execute([$first_name,$last_name,$email,$id]);  //This is the part where the where the actual user variable is assigned.
+    $prepare->execute([$first_name,$last_name,$email,/* $id */]);  //This is the part where the where the actual user variable is assigned.
     echo "Total of ". $prepare->rowCount(). " data is updated"; // This counts the number of rows of which the data has been updated.
    }
    catch(PDOException $p){
