@@ -16,10 +16,10 @@ try{
     }
 
 
-    if ($conn==true){
+   /*  if ($conn==true){
         echo "connected";
     }
     else{
         echo "not connected";
-    }
+    } */
     //echo "hello neraz";
