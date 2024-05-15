@@ -19,33 +19,37 @@
 
 
 <?php
-    if(isset($_POST['update'])){
-            $id = $_POST['id'];
-            $first_name =$_POST['$first_name'];
-            $last_name = $_POST['$last_name'];
-            $email = $_POST['email'];
-            $telephone = $_POST['telephone'];
+    
+    
+    if(isset($_POST["update_btn"])){
+            $id = $_POST["id"];
+            $first_name =$_POST["first_name"];
+            $last_name = $_POST["last_name"];
+            $email = $_POST["email"];
+            $telephone = $_POST["telephone"];
+            
 
 
 
+        
         $update_query = "UPDATE users SET first_name=:first_name, last_name=:last_name, email=:email, telephone=:telephone WHERE user_id=:id";
         $prepare_update = $meet_and_greet->prepare($update_query);
         $prepare_update->setFetchMode(PDO::FETCH_ASSOC);
         $update_values = [
-            ':id'=> $id,
-            ':first_name' => $first_name,
-            ':last_name' => $last_name,
-            ':email'=> $email,
-            ':telephone'=> $telephone
+            ":id"=> $id,
+            ":first_name" => $first_name,
+            ":last_name" => $last_name,
+            ":email"=> $email,
+            ":telephone"=> $telephone
         ];
-        $done = $prepare_update->execute([$id,$first_name,$last_name,$email,$telephone]);
-        echo "neraz";
-        
-        if($done=true){
-            echo "updated succesfully";
-        }
-        
-        
+        $done = $prepare_update->execute($update_values);
+        echo "update successfully";
     }
+        
+    
+       
+        
+        
+    
 ?>
 

@@ -1,5 +1,5 @@
 <?php 
-    include_once "sql_code.php";
+    include_once 'sql_code.php';
     
 ?>
 
@@ -32,27 +32,27 @@
 
     <form action = "sql_code.php" method="post" >
     <div class="mb-3 mt-3">    
-        <input type="hidden" name="id"value="<?php echo $id_data['user_id'];?>"><br></div>
+        <input type="hidden" name="id"value="<?php echo $id_data["user_id"];?>"><br></div>
 
         <div class="mb-3 mt-3">
-        first_name : <input type = "text" name="first_name" value="<?php echo $id_data['first_name'];?>"><br>
+        first_name : <input type = "text" name="first_name" value="<?php echo $id_data["first_name"];?>"><br>
         </div>
 
         <div class="mb-3 mt-3">
-        last_name : <input type ="text" name = "last_name" value="<?php echo $id_data['last_name'];?>"><br></div>
+        last_name : <input type ="text" name = "last_name" value="<?php echo $id_data["last_name"];?>"><br></div>
 
         <div class="mb-3 mt-3">
-        email : <input type ="text" name = "email" value="<?php echo $id_data['email'];?>"><br></div>
+        email : <input type ="text" name = "email" value="<?php echo $id_data["email"];?>"><br></div>
         
         <div class="mb-3 mt-3">
-        telephone : <input type ="text" name = "telephone" value="<?php echo $id_data['telephone'];?>"><br></div>
+        telephone : <input type ="text" name = "telephone" value="<?php echo $id_data["telephone"];?>"><br></div>
 
         <div class="mb-3 mt-3">
-        <input type ="submit" value = "update" name="update"> <br></div>
+        <button type ="submit"  name="update_btn"> update</button><br></div>
 
+        
     
 
     </form>
 </body>
 </html>
-<?php include_once "sql_code.php"?>
