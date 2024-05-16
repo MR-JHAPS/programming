@@ -1,0 +1,135 @@
+body{
+    margin: 0px;
+    padding:0px;
+    background-color:  rgb(213, 245, 245);
+
+}
+/* nav bar--------------------------------------------------------------- */
+.nav_bar a{
+    text-decoration: none;
+    color:white;
+   
+    
+    
+}
+
+.nav_bar li{
+    list-style-type: none;
+    display: inline-block;
+    padding:20px;
+    
+
+    
+    
+}
+
+.nav_bar li:hover{
+    
+    background-color: rgba(0, 0, 0, 0.554);
+    transition-duration: 0.3s;
+    cursor: pointer;
+    
+}
+
+.right{
+    float:right;
+}
+.nav_bar ul{
+    width:auto;
+    margin:0px;
+    background-color: rgba(23, 23, 23, 0.796);
+    box-shadow: rgba(0, 0, 0, 0.522) 3px 3px 15px;
+    
+    
+    
+
+}
+/* ---------------------upto here nav bar----------------------------------------------- */
+
+.header {
+    
+    border:2px solid black;
+    text-align: center;
+    text-shadow: hsla(0, 0%, 12%, 0.401) 3px 3px 6px;
+    background-color: rgb(210, 210, 71);
+    font-family:Arial, Helvetica, sans-serif;
+    color:black;
+    font-size: 1.5em;
+
+
+    
+}
+
+.body{
+    border:none;
+    width:75%;
+    height: auto;
+    
+    float:left;
+    margin: 1%;
+    padding:12px;
+    box-shadow: rgb(226, 242, 244) 2px 2px 44px;
+    background-color:  rgba(240, 255, 255, 0.515);
+    box-sizing: border-box;
+    margin-top: 5%;
+    column-count: 3;
+    column-rule:5px solid rgba(0, 0, 0, 0.312);
+    
+
+}
+.float_right{
+    
+    float:right;
+    border:none;
+    width:21%;
+    height:100%;
+    margin: 1%;
+    margin-top: 5%;
+    padding:15px;
+    overflow: scroll;
+    background-color:rgba(23, 23, 23, 0.796);
+    box-sizing: border-box;
+    
+    
+    color:white;
+}
+.footer{
+    border:2px solid black;
+    margin: 1%;
+    float:inline-end
+}
+
+
+/* This is experimental and haven't tried yet */
+.input_form{
+    border-bottom:2px solid black;
+    outline:none;  /* this removes the outline from the input field default from the browser. */
+    box-sizing: border-box; /* This helps to keep the size of the box intact even with the increase in padding */
+    background-image: url("search_icon.png");
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding:12px 40px; /* 40px is for the area to the search icon */
+    ;
+}
+
+.input_form:focus{
+    border:3px solid black; /* This adds the border around the text box while selected */
+}
+
+
+.input {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;    /* to animate the width of the search bar */
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+  }
+
+
+  /* input type="textarea" instead of text to make the resizeable box */

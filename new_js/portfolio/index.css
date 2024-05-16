@@ -1,0 +1,70 @@
+body{
+    margin:0px;
+}
+/* ****************************************************************************+body structure******************************************************* */
+.header{
+    background-color: #F4D644;
+    width:82%;
+    height:15vh;
+    box-sizing: border-box;
+    text-align: center;
+    float: right;
+    margin-top: 4%;
+    overflow:hidden;
+}
+
+
+
+
+.left_menu{
+    background-color: #2A2E36;
+    color:white;
+    width:20%;
+    height:100vh;
+    box-sizing: border-box;
+    padding-top: 2%;
+    
+    }
+
+.photo_box{
+    overflow:hidden;
+}
+
+.photo_box img{
+    box-sizing:border-box;
+    margin: 3%;
+    max-width: 97%;
+    border: 10px solid white;
+}
+
+
+
+
+.right_body{
+    box-sizing: border-box;
+
+}
+
+/* **********************-----------------------************************************************************************************************************************** */
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color:white;
+    display: block;
+}
+
+.links a:hover{
+    background-color: black;
+}
+
+ul{
+    box-sizing: border-box;
+    margin-left:0px;
+    padding:0;
+    text-wrap: 100px;
+    
+}
