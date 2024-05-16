@@ -4,6 +4,7 @@ body{
     background-color:  rgb(213, 245, 245);
 
 }
+/* nav bar--------------------------------------------------------------- */
 .nav_bar a{
     text-decoration: none;
     color:white;
@@ -34,7 +35,7 @@ body{
     
 
 }
-
+/* ---------------------upto here nav bar----------------------------------------------- */
 
 .header{
     border:2px solid black;
@@ -50,24 +51,28 @@ body{
 .body{
     border:none;
     width:75%;
-    height: 28rem;
+    height: auto;
     
     float:left;
     margin: 1%;
     padding:12px;
     box-shadow: rgb(226, 242, 244) 2px 2px 44px;
     background-color:  rgba(240, 255, 255, 0.515);
+    box-sizing: border-box;
 
 }
 .float_right{
     float:right;
     border:none;
-    width:14%;
+    width:11%;
     height:28rem;
     margin: 1%;
-    padding:12px;
+    margin-top: 5%;
+    padding:15px;
     overflow: scroll;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color:rgba(23, 23, 23, 0.796);
+    box-sizing: border-box;
+    
     color:white;
 }
 .footer{
