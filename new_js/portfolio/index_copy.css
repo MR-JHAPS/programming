@@ -4,13 +4,36 @@ body{
 /* ****************************************************************************+body structure******************************************************* */
 .header{
     background-color: #F4D644;
-    width:82%;
+    display: block;
+    width:70%;
     height:15vh;
     box-sizing: border-box;
     text-align: center;
     float: right;
     margin-top: 4%;
     overflow:hidden;
+}
+
+.header h1,h3{
+    padding-top:5px;
+    padding-bottom: 0px;
+    margin: 0;
+    border: none;
+    text-align: left;
+    padding-left: 200px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    
+}
+.header h1{
+    font-size: 3em;
+
+}
+
+.header h5{
+    padding-top: 0;
+    text-align: left;
+    padding-left:80px;
 }
 
 
@@ -23,6 +46,7 @@ body{
     height:100vh;
     box-sizing: border-box;
     padding-top: 2%;
+    float:left;
     
     }
 
@@ -32,17 +56,22 @@ body{
 
 .photo_box img{
     box-sizing:border-box;
-    margin: 3%;
-    max-width: 97%;
-    border: 10px solid white;
+    margin: 0;
+    max-width: 82%;
+    border: 8px solid white;
+    margin-left: 15%;
 }
 
 
 
 
 .right_body{
+    width: 70%;
     box-sizing: border-box;
-
+    background-color: rgb(236, 251, 251);
+    float:right;
+    margin-top: 1%;
+    display: inline;
 }
 
 /* **********************-----------------------************************************************************************************************************************** */
@@ -52,7 +81,7 @@ body{
 
 .linkedin:hover{
     background-color: black;
-    transition-duration: 0.5s;
+    transition-duration: 0.4s;
 }
 
 
@@ -67,6 +96,7 @@ li{
     list-style: none;
     border:none;
     margin:2%;
+    margin-left: 13%;
     }
 li img{
     margin-right:3%;
@@ -79,7 +109,16 @@ a{
     padding:10px;
 }
 
-
+#hovering:hover{
+    
+    padding: 5%;
+    padding-left: 12%;
+    margin: 0;
+    background-color:#F4D644;
+    transition-duration: 0.4s;
+    a{color:black;};
+    
+}
 
 
 
