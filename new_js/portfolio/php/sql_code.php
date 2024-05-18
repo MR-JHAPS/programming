@@ -1,6 +1,15 @@
+<!-- In this page all the Reading, Inserting, Updating and Deleting of data is done.
+                    All The SQL code is in this page.
+    
+                    The update.php, insert.php, delete.php, index.php refer to this page 
+    because I have set the form action to "sql_code.php" which is this page.
+ -->
+
+
+
 <?php
     include_once "config.php";
-    session_start();
+    session_start(); // to store the $_SESSION["message"] value it must be started but still not working.
 
 ?>
 
@@ -60,6 +69,10 @@
 ?>
 
 <?php
+
+    // This code is for the insertion of data.
+    //if "insert" button is pressed in "insert.php" then this code will run.
+
     if(isset($_POST["insert"])){
         $first_name = $_POST["first_name"];
         $last_name = $_POST["last_name"];
@@ -79,7 +92,7 @@
             ] ;
             $inserted = $prepare_insert->execute($insert_values);
             if ($inserted){
-               $_SESSION["message"]="Inserted successfully";
+               $_SESSION["message"]="Inserted successfully"; //doesn't work until now ...need to figure out why.
                 header("location:index.php");
                 
             }
@@ -102,19 +115,27 @@
 
     // This is for the deletion of the tabel row/data;
 
-    if(isset($_GET["id"])){
-        $id = $_GET["id"];
+    //if you select "yes_delete" from "delete.php" then the data will be deleted.
 
-        $delete_query = "DELETE FROM users where user_id=:user_id";
-        $prepare_delete = $meet_and_greet->prepare($delete_query) ;
-        $delete_value = [":id"=> $id];
-        $deleted = $prepare_delete->execute($delete_value);
-
-        if($deleted){
-            echo "DELETED sucessfully";
-        }
-
+    if(isset($_POST["yes_delete"])){
+        $id= $_POST["id"];
+        
+            $delete_query = "DELETE FROM users where user_id=:user_id";
+            $prepare_delete = $meet_and_greet->prepare($delete_query) ;
+            $delete_value = [":user_id"=> $id];
+            $deleted = $prepare_delete->execute($delete_value);
+    
+            if($deleted){
+                echo "DELETED sucessfully";
+            }
+    
+    
+        
 
     }
 
-    if(isset())
+
+        // if you select no delete then you will be returned to "index.php". 
+    if(isset($_POST["no_delete"])){
+        header("location:index.php");
+    }
