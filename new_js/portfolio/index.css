@@ -1,17 +1,23 @@
 body{
     margin:0px;
+    background-color:rgb(210, 210, 210);
 }
 /* ****************************************************************************+body structure******************************************************* */
 .header{
-    background-color: #F4D644;
+    background-color: hwb(50 26% 4%);
     display: block;
     width:70%;
-    height:17vh;
+    height:17%;
     box-sizing: border-box;
     text-align: center;
     float: right;
     margin-top: 0;
-    overflow:hidden;
+    overflow:auto;
+    position:relative;
+   /*  border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-right:5px solid white; */
+    
     /* border-bottom: 5px solid rgba(68, 68, 68, 0.303); */
     /* box-shadow: 0px 5px 15px rgb(210, 210, 210); */
 }
@@ -24,11 +30,12 @@ body{
     text-align: left;
     padding-left: 200px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:#2A2E36;
     
     
 }
 .header h1{
-    font-size: 3em;
+    font-size: 300%;
 
 }
 
@@ -36,6 +43,7 @@ body{
     padding-top: 0;
     text-align: left;
     padding-left:80px;
+    color:#2A2E36;
 }
 
 
@@ -49,7 +57,8 @@ body{
     box-sizing: border-box;
     padding-top: 2%;
     float:left;
-    
+    border-right:5px solid rgb(210, 210, 210);
+    position: fixed;
     }
 
 .photo_box{
@@ -60,7 +69,8 @@ body{
     box-sizing:border-box;
     margin: 0;
     max-width: 70%;
-    border: 8px solid white;
+    border: 5px solid white;
+    border-radius: 250px;
     margin-left: 15%;
     
 }
@@ -72,11 +82,12 @@ body{
     width: 70%;
     height:82vh;
     box-sizing: border-box;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(227, 229, 232, 0.72);
     float:right;
-    margin-top: 1%;
+    margin-top: 0.4%;
     display: block;
     padding: 2% 4%;
+    
 
     /* box-shadow: 0px 5px 15px rgb(99, 99, 99); */
     
@@ -94,6 +105,7 @@ body{
 
 .links{
     border:none;
+    box-sizing: border-box;
 }
 
 .linkedin:hover{
@@ -106,6 +118,8 @@ body{
 ul{
     margin:0;
     padding: 0;
+    box-sizing: border-box;
+    overflow: auto;
 }
 
 
@@ -114,10 +128,19 @@ li{
     border:none;
     margin:2%;
     margin-left: 13%;
+    box-sizing: border-box;
+    
     }
 li img{
     margin-right:3%;
 }    
+
+.linkedin img{
+    float:left;
+    
+
+}
+
 
 a{
     text-decoration: none;
@@ -126,7 +149,7 @@ a{
     padding:10px;
 }
 
-#hovering:hover{
+#hovering:hover{  /* This code is for the links in the left menu */
     
     padding: 5%;
     padding-left: 12%;
