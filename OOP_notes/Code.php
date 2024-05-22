@@ -5,6 +5,7 @@ include_once "Connection.php";
 
 <?php
 
+    // works fine.
     class Code extends Connection{
         //protected $table_name;
 
@@ -20,27 +21,23 @@ include_once "Connection.php";
         }
 
         public function user_table($pdo,$table_name){
-        
-            $pdo ; // this is the placeholding variable for the actual PDO();
-           
+            parent::connect();
+            $pdo ;
             /* $query = "SELECT * FROM " . $this->table_name; */
-           
             $query = "SELECT * FROM " . $table_name;
             $prepare_table =  $pdo->prepare($query);
             $prepare_table->setFetchMode(PDO::FETCH_ASSOC);
             $prepare_table->execute();
             $all_datas = $prepare_table->fetchAll();
             return $all_datas;
-        }
 
-        public function table_insert(){
-
+            
         }
     }
 
     $sql_code = new Code($config["source"],$config["username"],$config["password"]);
     
-    $pdo = $sql_code->connect(); // This is the PDO function "connect()" from parent class in Connection.php.
+    $pdo = $sql_code->connect(); // This is the PDO function from parent class in Connection.php.
    $user_table = $sql_code->user_table($pdo,"users");
-    //var_dump($user_table);
+    var_dump($user_table);
 

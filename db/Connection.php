@@ -19,14 +19,14 @@
 
         }
 
-        public function get_source(){
+        protected function get_source(){
             return $this->source;
         }
         
-        public function get_username(){
+        protected function get_username(){
             return $this->username;
         }
-        public function get_password(){
+        protected function get_password(){
             return $this->password;
         }
         
@@ -42,8 +42,6 @@
             
     }
 
-   /*  $db_config = new Connection($config["source"],$config["username"],$config["password"]);
-    $db_conn = $db_config->connect(); */
-    //var_dump($db_config->get_source(),$db_config->get_password());
+   
          
 
