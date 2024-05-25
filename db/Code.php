@@ -6,12 +6,14 @@ include_once "Connection.php";
 <?php
 
     class Code extends Connection{
-        //protected $table_name;
+        public static $pdo;
+        protected $table_name;
 
         //This is the constructor and the paramete of both parent and child class is submitted here.
-        public function __construct($source,$username,$password){
-           parent::__construct($source,$username,$password);
-           //$this->table_name = $table_name;
+        public function __construct($source, $username, $password, $pdo, $table_name){
+           parent::__construct($source, $username, $password);
+           $this->pdo = $pdo;
+           $this->table_name = $table_name;
 
         }
 
@@ -19,14 +21,14 @@ include_once "Connection.php";
             return $this->table_name;
         }
 
-        public function user_table($pdo,$table_name){
+        public function user_table(){
         
-            $pdo ; // this is the placeholding variable for the actual PDO();
+            self::$pdo ; // this is the placeholding variable for the actual PDO();
            
             /* $query = "SELECT * FROM " . $this->table_name; */
            
-            $query = "SELECT * FROM " . $table_name;
-            $prepare_table =  $pdo->prepare($query);
+            $query = "SELECT * FROM " . $this->table_name;
+            $prepare_table =  self::$pdo->prepare($query);
             $prepare_table->setFetchMode(PDO::FETCH_ASSOC);
             $prepare_table->execute();
             $all_datas = $prepare_table->fetchAll();
@@ -38,9 +40,28 @@ include_once "Connection.php";
         }
     }
 
-    $sql_code = new Code($config["source"],$config["username"],$config["password"]);
+
+    Code::$pdo = new Code()->connect();
+    var_dump();
+    /* 
+  
+    $sql_code = new Code($config["source"],$config["username"],$config["password"], $pdo ,"users");
+  
+    //$pdo = $sql->connect();
+    $user_table = $sql_code->user_table();
+    var_dump($user_table);
+   */
+
+
+
+
+
+
+
+    /*   $sql_code = new Code($config["source"],$config["username"],$config["password"]);
     
     $pdo = $sql_code->connect(); // This is the PDO function "connect()" from parent class in Connection.php.
    $user_table = $sql_code->user_table($pdo,"users");
     //var_dump($user_table);
 
+ */

@@ -1,5 +1,5 @@
 <?php 
-include_once "Connection.php";
+//include_once "Connection.php";
 ?>
 
 <!DOCTYPE html>
@@ -10,14 +10,19 @@ include_once "Connection.php";
     <title>Document</title>
 </head>
 <body>
-    <form action= "Code.php" method ="post">
+    <form action=code_2.php method ="post">
+        
         First name<br>
         <input type = "text" name="first_name" placeholder="first_name"><br><br>
         Last name<br>
         <input type = "text" name="last_name" placeholder="last_name"><br><br>
         Email<br>
         <input type = "text" name="email" placeholder="email"><br><br>
-        <input type="submit" name="insert" value="Insert">
+
+        Telephone<br>
+        <input type = "text" name="telephone" placeholder="telephone"><br><br>
+        
+        <input type="submit" name="insert" value="insert">
         
     </form>
     
